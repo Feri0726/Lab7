@@ -35,9 +35,9 @@ int main(){
   scanf("%d", &value);
   recever(array, len, value, &idx, &memory);
   if (idx == -1) printf("Not found\n");
-  else printf("Is %d in? %d\n", value, idx);
+  else {printf("Is %d in? %d\n", value, idx);
   printf("The memory obtained by that smth: %p", &memory);
-
+  }
 
   return 0;
 }
