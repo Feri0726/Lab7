@@ -9,16 +9,13 @@
 
 */
 
-
 #include <stdio.h>
 
-void recever(int array[],int arlen, int value, int *idx, int *memory){
+void recever(int array[],int arlen, int value, int *idx){
   *idx = -1;
-  *memory = 0;
   for (int i = 0; i < arlen; i++){
     if (array[i] == value){
       *idx = i;
-      *memory = *idx;
     }
   }
 }
@@ -30,14 +27,13 @@ int main(){
   int len = 5;
   int value;
   int idx;
-  int memory;
   printf("Value?");
   scanf("%d", &value);
-  recever(array, len, value, &idx, &memory);
+  recever(array, len, value, &idx);
   if (idx == -1) printf("Not found\n");
   else {printf("Is %d in? %d\n", value, idx);
-  printf("The memory obtained by that smth: %p", &memory);
-  }
+  printf("The memory obtained by that smth: %p", &idx);}
+
 
   return 0;
 }
