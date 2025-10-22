@@ -12,7 +12,31 @@
 
 #include <stdio.h>
 
+void recever(int array[],int arlen, int value, int *idx, int *memory){
+  *idx = -1;
+  *memory = 0;
+  for (int i = 0; i < arlen; i++){
+    if (array[i] == value){
+      *idx = i;
+      *memory = *idx;
+    }
+  }
+}
+
+
+
 int main(){
+  int array[] = {2,4,6,8,10};
+  int len = 5;
+  int value;
+  int idx;
+  int memory;
+  printf("Value?");
+  scanf("%d", &value);
+  recever(array, len, value, &idx, &memory);
+  if (idx == -1) printf("Not found\n");
+  else printf("Is %d in? %d\n", value, idx);
+  printf("The memory obtained by that smth: %p", &memory);
 
 
   return 0;
